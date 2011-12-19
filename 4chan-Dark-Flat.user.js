@@ -104,10 +104,17 @@
     
     (function()
     {
-        var SSf = window.$ = function(selector, root)
+        var SSf = window.$ =
         {
+            (function(selector, root)
+            {
             return this instanceof SSf ?
                 this.init(selector, root) : new SSf(selector, root);
+            });
+            
+            alert: function()
+            {
+            },
         };
         
         SSf.prototype = 
